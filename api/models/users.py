@@ -11,3 +11,6 @@ class User(Base):
 
     order = relationship("Order", back_populates="user")
     payment = relationship("Payment", back_populates="user")
+
+    rating = Column(Integer, nullable = True)
+    review = Column(String(500), nullable = True)

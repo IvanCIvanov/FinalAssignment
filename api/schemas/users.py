@@ -5,7 +5,8 @@ from .payments import Payment
 
 
 class UserBase(BaseModel):
-    pass  # No shared fields yet
+    rating: Optional[int] = None
+    review: Optional[str] = None
 
 
 class UserCreate(UserBase):
@@ -14,6 +15,8 @@ class UserCreate(UserBase):
 
 class UserUpdate(BaseModel):
     order_id: Optional[int] = None
+    rating: Optional[int] = None
+    review: Optional[str] = None
 
 
 class User(UserBase):

@@ -11,3 +11,6 @@ class MenuItem(Base):
 
     recipe = relationship("Recipe", back_populates="menu_item")
     order_details = relationship("OrderDetail", back_populates="menu_item")
+
+    promotion_code = Column(String(50), nullable=True)
+    expiration_date = Column(DATETIME, nullable=True)

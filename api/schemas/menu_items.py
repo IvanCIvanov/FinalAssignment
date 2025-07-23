@@ -1,11 +1,12 @@
 from typing import Optional
 from pydantic import BaseModel
 from .recipes import Recipe
-
+from datetime import datetime
 
 
 class MenuItemBase(BaseModel):
-    pass
+    promotion_code: Optional[str] = None
+    expiration_date: Optional[datetime] = None
 
 
 class MenuItemCreate(MenuItemBase):
@@ -14,7 +15,8 @@ class MenuItemCreate(MenuItemBase):
 
 class MenuItemUpdate(BaseModel):
     recipe_id: Optional[int] = None
-
+    promotion_code: Optional[str] = None
+    expiration_date: Optional[datetime] = None
 
 class MenuItem(MenuItemBase):
     sandwich_id: int
