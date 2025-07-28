@@ -7,10 +7,9 @@ class User(Base):
     __tablename__ = "users"
 
     customer_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    order_id = Column(Integer, ForeignKey("orders.id"))
+    rating = Column(Integer, nullable=True)
+    review = Column(String(500), nullable=True)
 
-    order = relationship("Order", back_populates="user")
+    # Relationships
+    orders = relationship("Order", back_populates="user")
     payment = relationship("Payment", back_populates="user")
-
-    rating = Column(Integer, nullable = True)
-    review = Column(String(500), nullable = True)

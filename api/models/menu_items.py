@@ -6,7 +6,7 @@ from ..dependencies.database import Base
 class MenuItem(Base):
     __tablename__ = "menu_items"
 
-    sandwich_id = Column(Integer, primary_key=True,  index=True, autoincrement=True)
+    sandwich_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     recipe_id = Column(Integer, ForeignKey("recipes.recipe_id"))
 
     recipe = relationship("Recipe", back_populates="menu_item")

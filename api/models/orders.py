@@ -10,8 +10,8 @@ class Order(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     customer_name = Column(String(100))
     order_date = Column(DATETIME, nullable=False, server_default=str(datetime.now()))
-    order_details_id = Column(Integer, ForeignKey("order_details.order_details_id"))
+    user_id = Column(Integer, ForeignKey("users.customer_id"), nullable=False)
 
     order_details = relationship("OrderDetail", back_populates="order")
-    user = relationship("User", back_populates="order")
+    user = relationship("User", back_populates="orders")
     payment = relationship("Payment", back_populates="order")
