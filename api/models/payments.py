@@ -7,7 +7,7 @@ class Payment(Base):
     __tablename__ = "payments"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    customer_id = Column(Integer, ForeignKey("users.customers_id"))
+    customer_id = Column(Integer, ForeignKey("users.customer_id"))
     order_id = Column(Integer, ForeignKey("orders.id"))
     payment_type = Column(String(100))
 
