@@ -17,3 +17,4 @@ class Order(Base):
     order_details = relationship("OrderDetail", back_populates="order")
     user = relationship("User", back_populates="orders")
     payment = relationship("Payment", back_populates="order")
+    sandwich = relationship("Sandwich", back_populates="orders")
