@@ -7,7 +7,9 @@ from .order_details import OrderDetail
 
 class OrderBase(BaseModel):
     customer_name: str
-    description: Optional[str] = None
+    user_id: int
+    sandwich_id: int
+    amount: int
 
 
 class OrderCreate(OrderBase):
@@ -16,7 +18,9 @@ class OrderCreate(OrderBase):
 
 class OrderUpdate(BaseModel):
     customer_name: Optional[str] = None
-    description: Optional[str] = None
+    user_id: Optional[int] = None
+    sandwich_id: Optional[int] = None
+    amount: Optional[int] = None
 
 
 class Order(OrderBase):
