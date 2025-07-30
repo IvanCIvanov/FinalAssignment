@@ -7,9 +7,10 @@ from ..dependencies.database import Base
 class Recipe(Base):
     __tablename__ = "recipes"
 
-    recipe_id = Column("id",Integer, primary_key=True, index=True, autoincrement=True)
-    sandwich_id = Column(Integer, ForeignKey("menu_items.sandwich_id"))
-    ingredient_id = Column("resource_id", Integer, ForeignKey("resources.ingredient_id"))
+    recipe_id = Column("id", Integer, primary_key=True, index=True, autoincrement=True)
+    sandwich_id = Column(Integer, ForeignKey("sandwiches.id"))
+    ingredient_id = Column("resource_id", Integer, ForeignKey("ingredient.ingredient_id"))
 
-    menu_item = relationship("MenuItem", back_populates="recipe")
+    menu_items = relationship("MenuItem", back_populates="recipe")
     ingredient = relationship("Resource", back_populates="recipes")
+    sandwich = relationship("Sandwich", back_populates="recipes")
