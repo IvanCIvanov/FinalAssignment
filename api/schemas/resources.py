@@ -9,11 +9,13 @@ class ResourceBase(BaseModel):
 
 
 class ResourceCreate(ResourceBase):
-    pass
+    ingredient_id: int
+    ingredient_name: str
+    amount: int
 
 
 class ResourceUpdate(BaseModel):
-    item: Optional[str] = None
+    ingredient_name: Optional[str] = None
     amount: Optional[int] = None
 
 
