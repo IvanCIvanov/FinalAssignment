@@ -9,7 +9,9 @@ class SandwichBase(BaseModel):
 
 
 class SandwichCreate(SandwichBase):
-    pass
+    id: int
+    sandwich_name: str
+    price: float
 
 
 class SandwichUpdate(BaseModel):
