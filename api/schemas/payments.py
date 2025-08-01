@@ -17,8 +17,8 @@ class PaymentUpdate(BaseModel):
 
 class Payment(PaymentBase):
     id: int
-    user: "User" = None
     order: Order = None
 
     class Config:
         from_attributes = True
+
