@@ -4,9 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.routers import index as indexRoute
 from api.models import model_loader
 from api.dependencies.config import conf
+from .controllers import users
+from .models.model_loader import index
 
 
 app = FastAPI()
+
+index()
+app.include_router(users.router)
 
 origins = ["*"]
 

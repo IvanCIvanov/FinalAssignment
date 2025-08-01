@@ -4,23 +4,21 @@ from .orders import Order
 
 class PaymentBase(BaseModel):
     payment_type: str
-
+    user: "User" = None
 
 class PaymentCreate(PaymentBase):
     customer_id: int
     order_id: int
-
 
 class PaymentUpdate(BaseModel):
     payment_type: Optional[str] = None
     customer_id: Optional[int] = None
     order_id: Optional[int] = None
 
-
 class Payment(PaymentBase):
     id: int
     order: Order = None
 
-    class ConfigDict:
+    class Config:
         from_attributes = True
 
