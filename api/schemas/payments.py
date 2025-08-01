@@ -2,7 +2,6 @@ from typing import Optional
 from pydantic import BaseModel
 from .orders import Order
 
-
 class PaymentBase(BaseModel):
     payment_type: str
 
@@ -20,10 +19,8 @@ class PaymentUpdate(BaseModel):
 
 class Payment(PaymentBase):
     id: int
-    user: "User" = None
     order: Order = None
 
     class ConfigDict:
         from_attributes = True
 
-from users import User
