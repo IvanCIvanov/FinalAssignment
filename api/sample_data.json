@@ -1,0 +1,58 @@
+{
+    "resources": [
+        {"ingredient_name": "White Bread", "amount": 100},
+        {"ingredient_name": "Whole Wheat Bread", "amount": 80},
+        {"ingredient_name": "Turkey", "amount": 50},
+        {"ingredient_name": "Ham", "amount": 60},
+        {"ingredient_name": "Swiss Cheese", "amount": 70}
+    ],
+    "sandwiches": [
+        {"sandwich_name": "Classic Club", "price": 8.99},
+        {"sandwich_name": "Turkey & Swiss", "price": 9.50},
+        {"sandwich_name": "Ham & Cheese", "price": 8.75},
+        {"sandwich_name": "Veggie Delight", "price": 7.99},
+        {"sandwich_name": "BLT", "price": 8.25}
+    ],
+    "users": [
+        {"rating": 5, "review": "Great service!"},
+        {"rating": 4, "review": "Good sandwiches"},
+        {"rating": 5, "review": "Will come back"},
+        {"rating": 3, "review": "Average experience"},
+        {"rating": 4, "review": "Nice place"}
+    ],
+    "recipes": [
+        {"sandwich_id": 1, "ingredient_id": 1},
+        {"sandwich_id": 1, "ingredient_id": 3},
+        {"sandwich_id": 2, "ingredient_id": 2},
+        {"sandwich_id": 2, "ingredient_id": 5},
+        {"sandwich_id": 3, "ingredient_id": 1}
+    ],
+    "menu_items": [
+        {"recipe_id": 1, "promotion_code": "SUMMER2023", "expiration_date": "2023-09-30T23:59:59"},
+        {"recipe_id": 2, "promotion_code": null, "expiration_date": null},
+        {"recipe_id": 3, "promotion_code": "FALL2023", "expiration_date": "2023-12-31T23:59:59"},
+        {"recipe_id": 4, "promotion_code": null, "expiration_date": null},
+        {"recipe_id": 5, "promotion_code": "WELCOME10", "expiration_date": "2023-10-31T23:59:59"}
+    ],
+    "orders": [
+        {"customer_name": "John Doe", "user_id": 1, "sandwich_id": 1, "amount": 1},
+        {"customer_name": "Jane Smith", "user_id": 2, "sandwich_id": 2, "amount": 2},
+        {"customer_name": "Bob Johnson", "user_id": 3, "sandwich_id": 3, "amount": 1},
+        {"customer_name": "Alice Brown", "user_id": 4, "sandwich_id": 4, "amount": 3},
+        {"customer_name": "Charlie Wilson", "user_id": 5, "sandwich_id": 5, "amount": 2}
+    ],
+    "order_details": [
+        {"order_id": 1, "sandwich_id": 1, "amount": 1},
+        {"order_id": 2, "sandwich_id": 2, "amount": 2},
+        {"order_id": 3, "sandwich_id": 3, "amount": 1},
+        {"order_id": 4, "sandwich_id": 4, "amount": 3},
+        {"order_id": 5, "sandwich_id": 5, "amount": 2}
+    ],
+    "payments": [
+        {"customer_id": 1, "order_id": 1, "payment_type": "credit_card"},
+        {"customer_id": 2, "order_id": 2, "payment_type": "debit_card"},
+        {"customer_id": 3, "order_id": 3, "payment_type": "cash"},
+        {"customer_id": 4, "order_id": 4, "payment_type": "credit_card"},
+        {"customer_id": 5, "order_id": 5, "payment_type": "mobile_payment"}
+    ]
+}
