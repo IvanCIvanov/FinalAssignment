@@ -32,4 +32,4 @@ def update(sandwich_id: int, request: schema.SandwichUpdate, db: Session = Depen
 
 @router.delete("/{sandwich_id}")
 def delete(sandwich_id: int, db: Session = Depends(get_db)):
-    return controller.delete(db=db, sandwich_id=sandwich_id)
+    return controller.delete(db=db, sandwich_id=sandwich_id, request=None)
