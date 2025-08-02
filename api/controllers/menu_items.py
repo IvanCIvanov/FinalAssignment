@@ -6,9 +6,9 @@ from sqlalchemy.exc import SQLAlchemyError
 
 def create(db: Session, request):
     new_item = model.MenuItem(
-        customer_id=request.customer_id,
-        rating=request.rating,
-        review=request.review
+        promotion_code=request.promotion_code,
+        expiration_date=request.expiration_date,
+        recipe_id=request.recipe_id
     )
 
     try:

@@ -16,6 +16,11 @@ def create_user(user: user_schema.UserCreate, db: Session = Depends(get_db)):
     db.refresh(new_user)
     return new_user
 
+@router.post("/create_Database",)
+
+
+
+
 @router.get("/", response_model=list[user_schema.User])
 def read_users(db: Session = Depends(get_db)):
     return db.query(user_model.User).all()
