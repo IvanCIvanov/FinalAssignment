@@ -10,19 +10,20 @@ class UserBase(BaseModel):
 
 
 class UserCreate(UserBase):
-    order_id: int
+    pass
 
 
 class UserUpdate(BaseModel):
-    order_id: Optional[int] = None
+    customer_id: Optional[int] = None
     rating: Optional[int] = None
     review: Optional[str] = None
 
 
 class User(UserBase):
     customer_id: int
-    order: Optional[Order] = None
-    payment: Optional[list[Payment]] = None
+    rating: Optional[int] = None
+    review: Optional[str] = None
+    order_id: Optional[int] = None
 
     class ConfigDict:
         from_attributes = True
