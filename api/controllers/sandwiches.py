@@ -4,8 +4,11 @@ from ..models import sandwiches as model
 from sqlalchemy.exc import SQLAlchemyError
 
 def create(db: Session, request):
+    existing = db.query(model.Sandwich).filter(model.Sandwich.sandwich_name == request.sandwich_name).first()
+    if existing:
+        raise HTTPException(status_code=400, detail=f"Sandwich '{request.sandwich_name}' already exists.")
     new_sandwich = model.Sandwich(
-        id=request.id,
+        #id=request.id,
         sandwich_name=request.sandwich_name,
         price=request.price,
     )
@@ -15,7 +18,7 @@ def create(db: Session, request):
         db.commit()
         db.refresh(new_sandwich)
     except SQLAlchemyError as e:
-        error = str(e.__dict__['orig'])
+        error = str(e)
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=error)
 
     return new_sandwich

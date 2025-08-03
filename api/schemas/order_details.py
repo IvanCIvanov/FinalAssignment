@@ -19,9 +19,11 @@ class OrderDetailUpdate(BaseModel):
 
 
 class OrderDetail(OrderDetailBase):
-    id: int
+    order_details_id: int
     order_id: int
+    sandwich_id: int
     sandwich: Sandwich = None
 
     class ConfigDict:
         from_attributes = True
+        allow_population_by_field_name = True
