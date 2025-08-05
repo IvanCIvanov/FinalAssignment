@@ -61,6 +61,7 @@ def populate_database(db: Session = Depends(get_db)):
 
     # Populate order details
     for detail in sample_data['order_details']:
+
         db.add(order_details.OrderDetail(**detail))
 
     db.commit()

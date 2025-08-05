@@ -10,8 +10,8 @@ from .models.model_loader import index
 
 app = FastAPI()
 
-index()
-app.include_router(users.router)
+# index()
+# app.include_router(users.router)
 
 origins = ["*"]
 

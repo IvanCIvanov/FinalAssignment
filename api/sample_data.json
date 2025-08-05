@@ -14,11 +14,11 @@
         {"sandwich_name": "BLT", "price": 8.25}
     ],
     "users": [
-        {"rating": 5, "review": "Great service!"},
-        {"rating": 4, "review": "Good sandwiches"},
-        {"rating": 5, "review": "Will come back"},
-        {"rating": 3, "review": "Average experience"},
-        {"rating": 4, "review": "Nice place"}
+        {"customer_name": "John Doe", "rating": 5, "review": "Great service!"},
+        {"customer_name": "Jane Smith", "rating": 4, "review": "Good sandwiches"},
+        {"customer_name": "Bob Johnson","rating": 5, "review": "Will come back"},
+        {"customer_name": "Alice Brown","rating": 3, "review": "Average experience"},
+        {"customer_name": "Charlie Wilson","rating": 4, "review": "Nice place"}
     ],
     "recipes": [
         {"sandwich_id": 1, "ingredient_id": 1},
@@ -35,18 +35,18 @@
         {"recipe_id": 5, "promotion_code": "WELCOME10", "expiration_date": "2023-10-31T23:59:59"}
     ],
     "orders": [
-        {"customer_name": "John Doe", "user_id": 1, "sandwich_id": 1, "amount": 1},
-        {"customer_name": "Jane Smith", "user_id": 2, "sandwich_id": 2, "amount": 2},
-        {"customer_name": "Bob Johnson", "user_id": 3, "sandwich_id": 3, "amount": 1},
-        {"customer_name": "Alice Brown", "user_id": 4, "sandwich_id": 4, "amount": 3},
-        {"customer_name": "Charlie Wilson", "user_id": 5, "sandwich_id": 5, "amount": 2}
+        {"user_id": 1, "sandwich_id": 1, "amount": 1},
+        { "user_id": 2, "sandwich_id": 2, "amount": 2},
+        { "user_id": 3, "sandwich_id": 3, "amount": 1},
+        { "user_id": 4, "sandwich_id": 4, "amount": 3},
+        { "user_id": 5, "sandwich_id": 5, "amount": 2}
     ],
     "order_details": [
-        {"order_id": 1, "sandwich_id": 1, "amount": 1},
-        {"order_id": 2, "sandwich_id": 2, "amount": 2},
-        {"order_id": 3, "sandwich_id": 3, "amount": 1},
-        {"order_id": 4, "sandwich_id": 4, "amount": 3},
-        {"order_id": 5, "sandwich_id": 5, "amount": 2}
+        {"order_id": 1, "sandwich_id": 1, "amount": 1, "sandwich_name":  "Classic Club"},
+        {"order_id": 2, "sandwich_id": 2, "amount": 2, "sandwich_name":  "Turkey & Swiss"},
+        {"order_id": 3, "sandwich_id": 3, "amount": 1, "sandwich_name":  "Ham & Cheese"},
+        {"order_id": 4, "sandwich_id": 4, "amount": 3, "sandwich_name":  "Veggie Delight"},
+        {"order_id": 5, "sandwich_id": 5, "amount": 2, "sandwich_name":  "BLT"}
     ],
     "payments": [
         {"customer_id": 1, "order_id": 1, "payment_type": "credit_card"},
