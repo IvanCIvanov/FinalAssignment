@@ -4,11 +4,10 @@ from .orders import Order
 
 class PaymentBase(BaseModel):
     payment_type: str
-    user: "User" = None
+    order_id: int
 
 class PaymentCreate(PaymentBase):
-    customer_id: int
-    order_id: int
+    pass
 
 class PaymentUpdate(BaseModel):
     payment_type: Optional[str] = None

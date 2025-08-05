@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
+from sqlalchemy import Column, ForeignKey, Integer, DATETIME
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from ..dependencies.database import Base
@@ -8,9 +8,8 @@ class Order(Base):
     __tablename__ = "orders"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    customer_name = Column(String(100))
     order_date = Column(DATETIME, nullable=False, server_default=str(datetime.now()))
-    user_id = Column(Integer, ForeignKey("users.customer_id"))
+    user_id = Column(Integer, ForeignKey("users.customer_id"), nullable=False)
     sandwich_id = Column(Integer, ForeignKey("sandwiches.id"), nullable=False)
     amount = Column(Integer, nullable=False)
 
