@@ -17,7 +17,9 @@ def create(db: Session, request):
         id=request.id,
         payment_type = request.payment_type,
         order_id = request.order_id,
-        payment_date = request.payment_date
+        customer_id=request.customer_id,
+        payment_date = request.payment_date,
+        amount_paid=request.amount_paid
     )
 
     try:

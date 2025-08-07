@@ -8,6 +8,7 @@ def create(db: Session, request):
     new_item = model.OrderDetail(
         order_id=request.order_id,
         sandwich_id=request.sandwich_id,
+        sandwich_name=request.sandwich_name,
         amount=request.amount
     )
 

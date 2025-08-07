@@ -13,6 +13,7 @@ class OrderDetailBase(BaseModel):
 class OrderDetailCreate(OrderDetailBase):
     order_id: int
     sandwich_id: int
+    sandwich_name: Optional[str]
 
 class OrderDetailUpdate(BaseModel):
     order_id: Optional[int] = None
