@@ -3,9 +3,16 @@ from fastapi import HTTPException, status, Response, Depends
 from ..models import resources as model
 from sqlalchemy.exc import SQLAlchemyError
 
-def create(db: Session, request):
+from ..schemas.resources import ResourceCreate
+
+
+def create(db: Session, request: ResourceCreate):
+    existing = db.query(model.Resource).filter(model.Resource.ingredient_name == request.ingredient_name).first()
+    if existing:
+        raise HTTPException(status_code=400, detail=f"Ingredient '{request.ingredient_name}' already exists.")
+
     new_resource = model.Resource(
-        ingredient_id=request.ingredient_id,
+        #ingredient_id=request.ingredient_id,
         ingredient_name=request.ingredient_name,
         amount=request.amount,
     )

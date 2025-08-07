@@ -5,7 +5,9 @@ from .sandwiches import Sandwich
 
 
 class OrderDetailBase(BaseModel):
+    order_id: int
     amount: int
+    sandwich_id: int
 
 
 class OrderDetailCreate(OrderDetailBase):
@@ -16,12 +18,13 @@ class OrderDetailUpdate(BaseModel):
     order_id: Optional[int] = None
     sandwich_id: Optional[int] = None
     amount: Optional[int] = None
+    sandwich_name: Optional[str] = None
 
 
 class OrderDetail(OrderDetailBase):
-    id: int
-    order_id: int
-    sandwich: Sandwich = None
+    order_details_id: int
+    sandwich_name: Optional[str] = str
 
     class ConfigDict:
         from_attributes = True
+        allow_population_by_field_name = True
