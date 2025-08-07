@@ -2,8 +2,8 @@ import json
 import os
 from datetime import datetime
 from sqlalchemy.orm import Session
-from .dependencies.database import engine, Base, get_db
-from .models import model_loader
+from api.dependencies.database import engine, Base, get_db
+from api.models import model_loader
 from fastapi import Depends
 
 # Import all models to ensure they're registered with SQLAlchemy

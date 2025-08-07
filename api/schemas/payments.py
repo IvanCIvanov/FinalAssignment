@@ -1,13 +1,18 @@
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from .orders import Order
+from datetime import date
 
 class PaymentBase(BaseModel):
     payment_type: str
     order_id: int
+    payment_date: date = Field(default_factory=date.today)
 
 class PaymentCreate(PaymentBase):
-    pass
+    id: int
+    payment_type: str
+    order_id: int
+    payment_date: date = Field(default_factory=date.today)
 
 class PaymentUpdate(BaseModel):
     payment_type: Optional[str] = None

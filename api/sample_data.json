@@ -49,10 +49,10 @@
         {"order_id": 5, "sandwich_id": 5, "amount": 2, "sandwich_name":  "BLT"}
     ],
     "payments": [
-        {"customer_id": 1, "order_id": 1, "payment_type": "credit_card"},
-        {"customer_id": 2, "order_id": 2, "payment_type": "debit_card"},
-        {"customer_id": 3, "order_id": 3, "payment_type": "cash"},
-        {"customer_id": 4, "order_id": 4, "payment_type": "credit_card"},
-        {"customer_id": 5, "order_id": 5, "payment_type": "mobile_payment"}
+        {"customer_id": 1, "order_id": 1, "payment_type": "credit_card", "payment_date": "2025-08-06T14:30:00", "amount_paid": 25.50},
+        {"customer_id": 2, "order_id": 2, "payment_type": "debit_card", "payment_date": "2025-08-06T15:10:00", "amount_paid": 18.75},
+        {"customer_id": 3, "order_id": 3, "payment_type": "cash", "payment_date": "2025-08-05T13:45:00", "amount_paid": 22.00},
+        {"customer_id": 4, "order_id": 4, "payment_type": "credit_card", "payment_date": "2025-08-04T12:20:00", "amount_paid": 19.99},
+        {"customer_id": 5, "order_id": 5, "payment_type": "mobile_payment", "payment_date": "2025-08-06T16:00:00", "amount_paid": 30.00}
     ]
 }
