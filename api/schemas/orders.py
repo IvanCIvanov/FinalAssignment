@@ -13,7 +13,7 @@ class OrderBase(BaseModel):
 
 
 class OrderCreate(OrderBase):
-    pass
+    promo_code: Optional[str] = None
 
 
 class OrderUpdate(BaseModel):

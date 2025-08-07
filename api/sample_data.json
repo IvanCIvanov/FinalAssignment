@@ -28,11 +28,11 @@
         {"sandwich_id": 3, "ingredient_id": 1}
     ],
     "menu_items": [
-        {"recipe_id": 1, "promotion_code": "SUMMER2023", "expiration_date": "2023-09-30T23:59:59"},
+        {"recipe_id": 1, "promotion_code": "SUMMER2023", "expiration_date": "2026-09-30T23:59:59"},
         {"recipe_id": 2, "promotion_code": null, "expiration_date": null},
-        {"recipe_id": 3, "promotion_code": "FALL2023", "expiration_date": "2023-12-31T23:59:59"},
+        {"recipe_id": 3, "promotion_code": "FALL2023", "expiration_date": "2026-12-31T23:59:59"},
         {"recipe_id": 4, "promotion_code": null, "expiration_date": null},
-        {"recipe_id": 5, "promotion_code": "WELCOME10", "expiration_date": "2023-10-31T23:59:59"}
+        {"recipe_id": 5, "promotion_code": "WELCOME10", "expiration_date": "2026-10-31T23:59:59"}
     ],
     "orders": [
         {"customer_name": "John Doe", "user_id": 1, "sandwich_id": 1, "amount": 1},
