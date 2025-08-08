@@ -22,7 +22,6 @@ with open(os.path.join(script_dir, 'sample_data.json'), 'r') as f:
 def populate_database(db: Session = Depends(get_db)):
     # Populate resources
     for resource in sample_data['resources']:
-        print(resource)
         db.add(resources.Resource(**resource))
 
     db.commit()

@@ -17,4 +17,3 @@
 # Note: Please drop the current 'sandwich_maker_api' database before running this command!!!
 
 `python -m api.populate_database`
-

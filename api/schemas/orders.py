@@ -15,7 +15,6 @@ class OrderCreate(OrderBase):
     pass
 
 class OrderUpdate(BaseModel):
-    customer_name: Optional[str] = None
     user_id: Optional[int] = None
     sandwich_id: Optional[int] = None
     amount: Optional[int] = None
@@ -23,7 +22,6 @@ class OrderUpdate(BaseModel):
 
 class Order(OrderBase):
     id: int
-    customer_name: Optional[str] = None
     order_date: Optional[datetime] = None
     order_details: list[OrderDetail] = None
 

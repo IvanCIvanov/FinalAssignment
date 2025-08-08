@@ -3,9 +3,6 @@ from fastapi import HTTPException, status, Response, Depends
 from ..models import payments as model
 from ..models.menu_items import MenuItem
 from ..models.orders import Order
-from ..models.order_details import OrderDetail
-from ..models.recipes import Recipe
-from ..models.resources import Resource
 from sqlalchemy.exc import SQLAlchemyError
 from datetime import datetime, date
 from sqlalchemy import func
@@ -36,10 +33,8 @@ def create(db: Session, request):
 def read_all(db: Session):
     try:
         payments = db.query(model.Payment).all()
-        # Convert SQLAlchemy objects to dictionaries for JSON serialization
         result = []
         for payment in payments:
-            # Convert payment_date to date-only if it's a datetime
             payment_date = payment.payment_date
             if isinstance(payment_date, datetime):
                 payment_date = payment_date.date()
@@ -72,7 +67,6 @@ def read_one(db: Session, item_id: int):
         if not payment:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Payment not found!")
         
-        # Convert payment_date to date-only if it's a datetime
         payment_date = payment.payment_date
         if isinstance(payment_date, datetime):
             payment_date = payment_date.date()
@@ -109,7 +103,6 @@ def delete(db: Session, item_id):
 
 
 def get_daily_profit(db: Session, target_date: date):
-    # Get all payments for the target date
     payments = db.query(model.Payment)\
         .filter(func.date(model.Payment.payment_date) == target_date)\
         .all()
@@ -117,21 +110,17 @@ def get_daily_profit(db: Session, target_date: date):
     total_profit = Decimal('0.00')
     
     for payment in payments:
-        # Get the order for this payment
         order = db.query(Order).filter(Order.id == payment.order_id).first()
         if not order:
             continue
             
-        # Check if there's a promotion for this sandwich
         menu_item = db.query(MenuItem).filter(MenuItem.sandwich_id == order.sandwich_id).first()
         
-        # Get the payment amount
         amount = payment.amount_paid if hasattr(payment, 'amount_paid') else Decimal('0.00')
         
-        # Apply 10% discount if promotion exists
         if menu_item and hasattr(menu_item, 'promotion_code') and menu_item.promotion_code:
             amount = amount * Decimal('0.9')  # 10% off
             
         total_profit += amount
     
-    return float(total_profit)  # Return as float for JSON serialization
+    return float(total_profit)

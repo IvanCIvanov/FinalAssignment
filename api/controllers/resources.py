@@ -12,7 +12,6 @@ def create(db: Session, request: ResourceCreate):
         raise HTTPException(status_code=400, detail=f"Ingredient '{request.ingredient_name}' already exists.")
 
     new_resource = model.Resource(
-        #ingredient_id=request.ingredient_id,
         ingredient_name=request.ingredient_name,
         amount=request.amount,
     )
